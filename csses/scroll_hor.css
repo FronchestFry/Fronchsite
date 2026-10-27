@@ -1,0 +1,23 @@
+div.scrollmenu {
+    background-color: blanchedalmond;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: inline-flex;
+    color:darkblue;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    vertical-align: top;
+    align-items: center;
+    flex-direction:column
+}
+
+div.scrollmenu a > div {
+    width: 80%;
+    text-align: center;
+    text-wrap-mode: wrap;
+    font-size: medium;
+}
