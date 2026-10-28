@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <body style="background-color: bisque;">
+
+        <header>
+            <a href="../index.html" style="color: chocolate;">
+                <b>
+                    Main Page
+                </b>
+            </a>
+        </header>
+
+        <audio id="Voting Music">
+            <source src="../Audios/Star Wars — The Imperial March (Darth Vader's Theme) No Copyright.mp3" type="audio/mp3">
+        If you can see this, your browser hates me and doesn't like audio elements
+        </audio>
+
+        <p>
+            Press the button below to begin the voting. You will be presented with 2 photos of the my friend's cat, Oliver. You may then vote on which you prefer. Once there is only one left, it will be displayed as the winner. <br>
+            Thank you to <a href="https://www.youtube.com/watch?v=lUKBItXhbW0">IARESMART</a> for your No Copyright version of the imperial march for a silly voting theme. Why the imperial march? Idk, it was just the first thing I thought of.
+        </p>
+
+        <button onclick="Choose_photos()" id="b1">
+            Bring forth the contents!!
+        </button>
+
+        <div>
+            <button type="button" id="b2" onclick="v1()" style="float: left;"> Vote for contestant 1 </button>
+            <button type="button" id="b3" style="float: right;" onclick="v2()"> Vote for contestant 2 </button>
+
+        </div>
+
+        <div style="align-content: center; width: 100%;">
+            <img id="c1" style="width: 49.5%; vertical-align: top; float: left;">
+            <img id="c2" style="width: 49.5%; vertical-align: top; float: right;">
+        </div>
+
+        <h3> Best Photo Of Ollie!!! (According to you):</h3>
+        <img style="width: 100%;" id="winner">
+
+        <script>
+            document.getElementById("b2").hidden = true
+                document.getElementById("b3").hidden = true
+
+            var imgs = ["../Imgs/Contestants/Photo1.jpeg","../Imgs/Contestants/Photo2.jpeg","../Imgs/Contestants/Photo3.jpeg","../Imgs/Contestants/Photo4.jpeg","../Imgs/Contestants/Photo5.jpeg",
+                    "../Imgs/Contestants/Photo6.jpeg","../Imgs/Contestants/Photo7.jpeg","../Imgs/Contestants/Photo8.jpeg","../Imgs/Contestants/Photo9.jpeg","../Imgs/Contestants/Photo10.jpeg",
+                    "../Imgs/Contestants/Photo11.jpeg","../Imgs/Contestants/Photo12.jpeg","../Imgs/Contestants/Photo13.jpeg","../Imgs/Contestants/Photo14.jpeg","../Imgs/Contestants/Photo15.jpeg",
+                    "../Imgs/Contestants/Photo16.jpeg","../Imgs/Contestants/Photo17.jpeg","../Imgs/Contestants/Photo18.jpeg","../Imgs/Contestants/Photo19.jpeg","../Imgs/Contestants/Photo20.jpeg"
+                ]
+
+            let contestantpic1;
+            let contestantpic2;
+
+            function Choose_photos () {
+                document.getElementById('Voting Music').play()
+                contestantpic1 = imgs.splice(Math.floor((Math.random())* imgs.length),1)[0]
+                contestantpic2 = imgs.splice(Math.floor((Math.random())* imgs.length),1)[0]
+
+                document.getElementById("c1").src = contestantpic1
+                document.getElementById("c2").src = contestantpic2
+                document.getElementById("b1").hidden = true
+                document.getElementById("b2").hidden = false
+                document.getElementById("b3").hidden = false
+            }
+
+            function v1() {
+                imgs.push(contestantpic1)
+                if (imgs.length > 1) {
+                    Choose_photos()
+                }
+                else {
+                    document.getElementById("c1").hidden = true
+                    document.getElementById("c2").hidden = true
+                    document.getElementById("winner").src = imgs[0]
+                }
+            }
+
+            function v2() {
+                imgs.push(contestantpic2)
+                if (imgs.length > 1) {
+                    Choose_photos()
+                }
+                else {
+                    document.getElementById("c1").hidden = true
+                    document.getElementById("c2").hidden = true
+                    document.getElementById("winner").src = imgs[0]
+                }
+            }
+
+        </script>
+
+
+    </body>
+</html>
