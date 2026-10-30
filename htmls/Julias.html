@@ -45,7 +45,7 @@
 
         <div>
             <h2>
-                Shift Ciphers!
+                Keyword Ciphers!
             </h2>
             <div>
                 <button onclick="Shifty_shifty()">
@@ -85,8 +85,8 @@
                 letter = input[letter].toLowerCase();
 
                 if (letters.includes(letter)) {
-                    var leter_index = (letters.indexOf(letter) + Number(document.getElementById("shift value").value)) % 26;
-                    letter = letters[leter_index];
+                    var shifted_index = (((letters.indexOf(letter) + Number(document.getElementById("shift value").value)) % 26) + 26) % 26;
+                    letter = letters[shifted_index];
                     output += letter
                 }
 
