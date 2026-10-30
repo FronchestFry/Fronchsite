@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <body style="background-color: bisque;">
+        <header>
+            <a href="../index.html" style="color: chocolate;">
+                <b>
+                    Main Page
+                </b>
+            </a>
+
+            <h1>
+                Ciphers! I really like 'em, they're cool. Check some of these out!
+            <img src="../Imgs/Billius Cipher.png" style="width: 20%; float: right;">
+            </h1>
+
+            <p style="width: 50%;">
+                A cipher site, to quickly make cyphers. I may add more cyphers later. Unlike some other companies, this is static html, with no back server (which is also why I couldn't make a global vote on best oli photo.) so you don't have to wory about us stealing your secrets because it's not stored.
+            </p>
+
+        </header>
+
+        <div>
+            <h2>
+                The clasic Caesar Cipher!
+            </h2>
+            <div>
+                <button onclick="Julius_em_bois()">
+                    Input to be made secret.
+                </button>
+                <br>
+                <input type="text" id="Gaius' input">
+                <input type="text" id="shift value" placeholder="Shift Value (Number)">
+            </div>
+
+            <div>
+                <p>
+                    Output secrified info
+                </p>
+                <p id="output">
+                    Output
+                </p>
+            </div>
+        </div> 
+    
+
+        <div>
+            <h2>
+                Shift Ciphers!
+            </h2>
+            <div>
+                <button onclick="Shifty_shifty()">
+                    Input to be made secret.
+                </button>
+                <br>
+                <input type="text" id="shifty secrets">
+                <input type="text" id="keyword" placeholder="Keyword (letters only)">
+            </div>
+
+            <div>
+                <p>
+                    Output secrified info
+                </p>
+                <p id="shift_output">
+                    Output
+                </p>
+            </div>
+        </div> 
+
+    </body>
+
+    <script>
+
+        function letter_cutup(letters) {
+            letters = String(letters)
+            const words = letters.split(" ");
+            return words
+        }
+
+        function Julius_em_bois() {
+            var letters = ['a b c d e f g h i j k l m n o p q r s t u v w x y z'];
+            letters = letter_cutup(letters);
+            var output = '';
+            let input = (document.getElementById("Gaius' input").value);
+            for (letter in input) {
+                letter = input[letter].toLowerCase();
+
+                if (letters.includes(letter)) {
+                    var leter_index = (letters.indexOf(letter) + Number(document.getElementById("shift value").value)) % 26;
+                    letter = letters[leter_index];
+                    output += letter
+                }
+
+                else {
+                    output += letter
+                }
+            }
+            document.getElementById("output").textContent = output
+        }
+
+        function Shifty_shifty() {
+            let keyword = document.getElementById("keyword").value
+            var Keyword = ''
+            for (letter in keyword) {
+                letter = keyword[letter].toLowerCase()
+                if (! Keyword.includes(letter))
+                Keyword += letter
+            }
+            keyword = Keyword
+
+            var letters = ['a b c d e f g h i j k l m n o p q r s t u v w x y z']
+            letters = letter_cutup(letters)
+            var output = ''
+            let input = String(document.getElementById("shifty secrets").value)
+            let to_be_removed = []
+
+            letters = letters.filter(letter => !keyword.includes(letter));
+
+            var modified_letters = keyword + letters.join("");
+
+            var letters = ['a b c d e f g h i j k l m n o p q r s t u v w x y z']
+            letters = letter_cutup(letters)
+
+            for (letter in input) {
+                letter = input[letter].toLowerCase()
+
+                if (letters.includes(letter)) {
+                    output += modified_letters[letters.indexOf(letter)]
+                }
+
+                else {
+                    output += letter
+                }
+            }
+            document.getElementById("shift_output").textContent = output
+        }
+
+    </script>
+
+</html>
