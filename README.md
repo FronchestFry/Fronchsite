@@ -9,3 +9,5 @@ HOW TO RUN:
 It's a website. You go to the demo link and it runs. or the deployment from the github repo. Either works.
 
 In fact, here: https://fronchestfry.github.io/Fronchsite/index.html
+
+<img width="1915" height="986" alt="image" src="https://github.com/user-attachments/assets/40b8c57a-06e7-4447-9f31-2d51c6c44ce2" />
