@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <title>
+        LoginPage
+    </title>
+
+    <body>
+
+        <h2>Enter Credentials</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <br>
+            <input type="password" id="password" placeholder="Password" required>
+            <br>
+            <button type="button" onclick="checkLogin()">Login</button>
+        </form>
+
+    </body>
+
+    <script>
+        function checkLogin(){
+            var user = document.getElementById("username").value
+            var password = document.getElementById("password").value
+
+            if (user == " " && password == "") {
+                window.opener.location.href = '../htmls/Secret_tunnel.html';
+                window.opener.document.cookie = "login_succeded=true; path=/";
+                window.close()
+            }
+            else {
+                window.opener.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+                window.close()
+            }
+
+        }
+    </script>
+
+</html>
