@@ -4,3 +4,8 @@ A website I developed over the course of a week, featuring a project portfolio, 
 I have a wide variety of normal things, with a hidden puzzle to access one of the pages. Good luck finding your way into that one. (It can be hacked, but there is also a way to get in legitimately, and I did add resistance to a few types of easy hacks. Good luck, you may well need it.
 
 If you need a hint, learn to drive a jeep, click all that is suspicious, and don't shy away from Oregon.
+
+HOW TO RUN:
+It's a website. You go to the demo link and it runs. or the deployment from the github repo. Either works.
+
+In fact, here: https://fronchestfry.github.io/Fronchsite/index.html
